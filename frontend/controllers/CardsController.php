@@ -16,13 +16,18 @@ class CardsController extends \yii\web\Controller
     public function actionView($id)
     {
         $card = $this->findModel($id);
+        $this->updateViews($card);
         return $this->render('view', ['card' => $card]);
     }
 
-
-    private function views()
+    /**
+     * Обновление счетчика просмотров
+     * @param $card \common\models\Cards
+     */
+    private function updateViews($card)
     {
-
+        $card->views++;
+        $card->update();
     }
 
     /**
