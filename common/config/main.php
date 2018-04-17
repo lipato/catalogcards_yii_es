@@ -1,5 +1,7 @@
 <?php
 return [
+    'language' => 'ru-RU',
+    'charset'=> 'utf-8',
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
