@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $posts common\models\Cards[] */
+/* @var $posts common\models\elasticsearch\CardsElastic[] */
 
 $this->title = 'Главная страница';
 ?>
@@ -20,7 +20,7 @@ $this->title = 'Главная страница';
                             '<div class="pull-right"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> ' .
                             $card->views .
                             '</div>',
-                            ['posts/view', 'id' => $card->id],
+                            ['cards/view', 'id' => $card->id],
                             ['class' => 'list-group-item']
                         ) ?>
                     <?php endforeach; ?>

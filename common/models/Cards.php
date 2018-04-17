@@ -61,6 +61,20 @@ class Cards extends \yii\db\ActiveRecord
     {
         return [
             TimestampBehavior::className(),
+            'elasticsearch' => [
+                'class' => \borales\behaviors\elasticsearch\Behavior::className(),
+                'mode' => 'command',
+                'elasticIndex' => \common\models\elasticsearch\CardsElastic::index(),
+                'elasticType' => \common\models\elasticsearch\CardsElastic::type(),
+                'dataMap' => [
+                    'id' => 'id',
+                    'title' => 'title',
+                    'content' => 'description',
+                    'views' => 'views',
+                    'created_at' => 'created_at',
+                    'updated_at' => 'updated_at',
+                ]
+            ],
         ];
     }
 }

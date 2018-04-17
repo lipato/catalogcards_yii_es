@@ -8,6 +8,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use common\models\LoginForm;
+use common\models\elasticsearch\CardsElastic;
 use common\models\Cards;
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
@@ -68,7 +69,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $cards = Cards::find()->orderBy(['id' => SORT_DESC])->limit(3)->all();
+        $cards = CardsElastic::find()->orderBy(['id' => SORT_DESC])->limit(3)->all();
         return $this->render('index', ['cards' => $cards]);
     }
 

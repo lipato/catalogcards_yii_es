@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1142cdac123d0d85e601efaa8e91c6c8",
+    "content-hash": "89c97ae61cd26efafb273d5bbaefde2f",
     "packages": [
         {
             "name": "andres-montanez/magallanes",
@@ -65,6 +65,50 @@
                 "deployment"
             ],
             "time": "2018-04-01T21:19:50+00:00"
+        },
+        {
+            "name": "borales/yii2-elasticsearch-behavior",
+            "version": "0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Borales/yii2-elasticsearch-behavior.git",
+                "reference": "7b11f1da3ee8d9d166577257d929704fc2ef305d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Borales/yii2-elasticsearch-behavior/zipball/7b11f1da3ee8d9d166577257d929704fc2ef305d",
+                "reference": "7b11f1da3ee8d9d166577257d929704fc2ef305d",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2-elasticsearch": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "borales\\behaviors\\elasticsearch\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Borales (Alexandr Bordun)",
+                    "email": "bordun.alexandr@gmail.com"
+                }
+            ],
+            "description": "Yii2 behavior to support Elasticsearch indexing",
+            "homepage": "https://github.com/Borales/yii2-elasticsearch-behavior",
+            "keywords": [
+                "Behavior",
+                "elasticsearch",
+                "es",
+                "yii2",
+                "yii2-behavior"
+            ],
+            "time": "2014-12-14T22:01:40+00:00"
         },
         {
             "name": "bower-asset/bootstrap",
