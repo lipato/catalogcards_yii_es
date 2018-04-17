@@ -7,6 +7,6 @@ $this->title = 'Редактор карточек';
 <div class="site-index">
 
     <div class="jumbotron">
-        <h1>Главная страница</h1>
+        <h1>Админка</h1>
     </div>
 </div>
