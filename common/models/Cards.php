@@ -34,6 +34,7 @@ class Cards extends \yii\db\ActiveRecord
             [['title', 'description'], 'required'],
             [['views', 'created_at', 'updated_at'], 'integer'],
             [['title'], 'string', 'max' => 255],
+            [['image'], 'file', 'extensions' => 'png, jpg'],
             [['description'], 'string'],
             ['views', 'default', 'value' => 0],
         ];
@@ -47,6 +48,7 @@ class Cards extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'title' => 'Заголовок',
+            'image' => 'Картинка',
             'description' => 'Описание',
             'views' => 'Просмотры',
             'created_at' => 'Дата создания',
@@ -69,6 +71,7 @@ class Cards extends \yii\db\ActiveRecord
                 'dataMap' => [
                     'id' => 'id',
                     'title' => 'title',
+                    'image' => 'image',
                     'description' => 'description',
                     'views' => 'views',
                     'created_at' => 'created_at',

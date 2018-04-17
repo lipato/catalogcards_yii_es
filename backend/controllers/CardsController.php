@@ -82,10 +82,24 @@ class CardsController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['index']);
-        }
+        if ($model->load(Yii::$app->request->post())) {
 
+            $file = \yii\web\UploadedFile::getInstance($model, 'image');
+            if (null !== $file) $model->image = date('YmdHis') . $file;
+
+            if ($model->save()) {
+
+                if (null !== $file) {
+                    $path = Yii::getAlias('@frontend') . "/web/uploads/img";
+                    //here you create the folder
+                    if (\yii\helpers\FileHelper::createDirectory($path, $mode = 0777, $recursive = true)) {
+                        $file->saveAs(Yii::getAlias('@frontend') . '/web/uploads/img/' . date('YmdHis') . $file);
+                    }
+                }
+
+                return $this->redirect(['index']);
+            }
+        }
         return $this->render('update', [
             'model' => $model,
         ]);

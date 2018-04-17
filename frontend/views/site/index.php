@@ -16,14 +16,15 @@ $this->title = 'Главная страница';
                     <div class = "col-sm-6 col-md-4">
                         <div class = "thumbnail">
                             <a href="<?= Url::to(['cards/view', 'id' => $card->id])?>">
-                                <?= Html::img('https://picsum.photos/300/200',
+                                <?= Html::img(Yii::$app->urlManager->createUrl('/uploads/img\/').$card->image,
                                     ['alt' => '100%x200', 'style'=> 'height: 200px; width: 100%; display: block;']) ?>
+
                             </a>
                         <div class="caption">
                             <a href="<?= Url::to(['cards/view', 'id' => $card->id])?>">
                             <?= Html::tag('h3', $card->title) ?>
                             </a>
-                            <?= Html::tag('p',$card->description); ?>
+                            <?= Html::tag('p',$card->getShortDescr()); ?>
                             <?= Html::tag('p','<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>&nbsp;'
                                 . $card->views); ?>
                             </p>

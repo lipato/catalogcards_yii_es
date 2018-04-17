@@ -34,12 +34,17 @@ class CardsElastic extends \yii\elasticsearch\ActiveRecord
         return 'cards';
     }
 
+    public function getShortDescr()
+    {
+        return \yii\helpers\StringHelper::truncate($this->description,200,' ...');
+    }
+
     /**
      * @return array the list of attributes for this record
      */
     public function attributes()
     {
         // path mapping for '_id' is setup to field 'id'
-        return ['id', 'title', 'description', 'views', 'created_at', 'updated_at'];
+        return ['id', 'title', 'description', 'image', 'views', 'created_at', 'updated_at'];
     }
 }
