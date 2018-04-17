@@ -1,0 +1,32 @@
+magephp:
+    environments:
+        dev:
+            user: root
+            from: ./
+            to: /home/admin/web/lipato.ru/public_html/
+            host_path: /home/admin/web/lipato.ru/public_html/
+            releases:
+              enabled: true
+              max: 5
+              symlink: current
+              directory: releases
+            exclude:
+              - .idea
+              - yii_test
+              - yii_test.bat
+              - .git
+              - .gitignore
+              - .gitattributes
+              - .mage.yml
+              - ._*
+              - .gitattributes
+              - phpunit.xml
+            hosts:
+              - 185.13.148.141
+            pre-deploy:
+            on-deploy:
+             - fs/link: { from: '../../backend/web', to: './frontend/web/admin' }
+             - exec: { cmd: 'composer dump-autoload -o --no-dev', desc: 'composer dump-autoload' }
+            on-release:
+            post-release:
+            post-deploy:
