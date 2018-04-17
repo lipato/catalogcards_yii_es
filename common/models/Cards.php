@@ -69,7 +69,7 @@ class Cards extends \yii\db\ActiveRecord
                 'dataMap' => [
                     'id' => 'id',
                     'title' => 'title',
-                    'content' => 'description',
+                    'description' => 'description',
                     'views' => 'views',
                     'created_at' => 'created_at',
                     'updated_at' => 'updated_at',
