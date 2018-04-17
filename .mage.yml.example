@@ -3,8 +3,8 @@ magephp:
         dev:
             user: root
             from: ./
-            to: /home/admin/web/lipato.ru/public_html/
-            host_path: /home/admin/web/lipato.ru/public_html/
+            to:
+            host_path:
             releases:
               enabled: true
               max: 5
@@ -18,11 +18,12 @@ magephp:
               - .gitignore
               - .gitattributes
               - .mage.yml
+              - .mage.yml.example
               - ._*
               - .gitattributes
               - phpunit.xml
             hosts:
-              - 185.13.148.141
+              - 0.0.0.0
             pre-deploy:
             on-deploy:
              - fs/link: { from: '../../backend/web', to: './frontend/web/admin' }
